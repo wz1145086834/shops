@@ -79,4 +79,5 @@ public interface TypeDao {
      */
     int deleteById(Integer tid);
 
+    List<Type> queryAll();
 }

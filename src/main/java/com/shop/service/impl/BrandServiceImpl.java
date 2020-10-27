@@ -19,6 +19,11 @@ public class BrandServiceImpl implements BrandService {
     @Resource
     private BrandDao brandDao;
 
+    @Override
+    public List<Brand> queryAll(Brand brand) {
+        return this.brandDao.queryAll(brand);
+    }
+
     /**
      * 通过ID查询单条数据
      *

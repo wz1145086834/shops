@@ -5,6 +5,7 @@ import com.shop.service.TypeService;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * (Type)表控制层
@@ -30,6 +31,11 @@ public class TypeController {
     @GetMapping("selectOne")
     public Type selectOne(Integer id) {
         return this.typeService.queryById(id);
+    }
+
+    @GetMapping("selectAll")
+    public List<Type> selectAll(){
+        return this.typeService.queryAll();
     }
 
 }

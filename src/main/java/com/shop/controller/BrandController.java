@@ -5,6 +5,7 @@ import com.shop.service.BrandService;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * (Brand)表控制层
@@ -30,6 +31,11 @@ public class BrandController {
     @GetMapping("selectOne")
     public Brand selectOne(Integer id) {
         return this.brandService.queryById(id);
+    }
+
+    @GetMapping("selectAll/{tid}")
+    public List<Brand> selectAll(Brand brand){
+        return this.brandService.queryAll(brand);
     }
 
 }

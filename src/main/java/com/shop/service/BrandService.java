@@ -11,6 +11,7 @@ import java.util.List;
  * @since 2020-10-24 15:06:41
  */
 public interface BrandService {
+    List<Brand> queryAll(Brand brand);
 
     /**
      * 通过ID查询单条数据
