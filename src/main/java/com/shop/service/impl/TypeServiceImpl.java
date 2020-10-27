@@ -19,6 +19,10 @@ public class TypeServiceImpl implements TypeService {
     @Resource
     private TypeDao typeDao;
 
+    public List<Type> queryAll() {
+        return typeDao.queryAll();
+    }
+
     /**
      * 通过ID查询单条数据
      *

@@ -12,6 +12,7 @@ import java.util.List;
  */
 public interface TypeService {
 
+    List<Type> queryAll();
     /**
      * 通过ID查询单条数据
      *
