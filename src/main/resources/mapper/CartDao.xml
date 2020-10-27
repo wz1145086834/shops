@@ -35,6 +35,12 @@
         limit #{offset}, #{limit}
     </select>
 
+    <select id="queryAllByUid" resultMap="CartMap">
+        select c.*,ct.*,g.*,i.*,s.*,cl.*,u.* from cart c,cartitems ct,goods g,info i,size s,color cl,user u
+        where u.uid=c.uid and c.id=ct.id and ct.gid =g.gid and i.gid=g.gid and i.iid=cl.iid and
+        i.iid=s.iid and u.uid=#{uid} and ct.sid=s.sid and ct.cid=cl.cid;
+    </select>
+
     <!--通过实体作为筛选条件查询-->
     <select id="queryAll" resultMap="CartMap">
         select

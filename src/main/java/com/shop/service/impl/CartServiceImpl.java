@@ -86,4 +86,9 @@ public class CartServiceImpl implements CartService {
     public boolean deleteById(Integer id) {
         return this.cartDao.deleteById(id) > 0;
     }
+
+    @Override
+    public List<Cart> queryAllByUid(int uid) {
+        return cartDao.queryAllByUid(uid);
+    }
 }

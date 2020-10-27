@@ -68,6 +68,7 @@ public class Cart implements Serializable {
         this.bak03 = bak03;
     }
 
+
     public Integer getId() {
         return id;
     }
@@ -124,17 +125,5 @@ public class Cart implements Serializable {
         this.bak03 = bak03;
     }
 
-    @Override
-    public String toString() {
-        return "Cart{" +
-                "id=" + id +
-                ", uid=" + uid +
-                ", num=" + num +
-                ", price=" + price +
-                ", bak01='" + bak01 + '\'' +
-                ", bak02='" + bak02 + '\'' +
-                ", bak03='" + bak03 + '\'' +
-                ", cartitems=" + cartitems +
-                '}';
-    }
+
 }

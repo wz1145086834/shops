@@ -1,8 +1,8 @@
 {
   "name" : "Cartitems",
-  "preName" : null,
+  "preName" : "",
   "comment" : null,
-  "templateGroupName" : null,
+  "templateGroupName" : "Default",
   "fullColumn" : [ {
     "name" : "ctid",
     "comment" : null,
@@ -19,6 +19,20 @@
     "ext" : { }
   }, {
     "name" : "gid",
+    "comment" : null,
+    "type" : null,
+    "shortType" : null,
+    "custom" : false,
+    "ext" : { }
+  }, {
+    "name" : "sid",
+    "comment" : null,
+    "type" : null,
+    "shortType" : null,
+    "custom" : false,
+    "ext" : { }
+  }, {
+    "name" : "cid",
     "comment" : null,
     "type" : null,
     "shortType" : null,

@@ -33,17 +33,7 @@ public class Info implements Serializable {
         return size;
     }
 
-    public Info(Integer iid, Integer gid, String texture, String model, String bak01, String bak02, String bak03, Size size, Color color) {
-        this.iid = iid;
-        this.gid = gid;
-        this.texture = texture;
-        this.model = model;
-        this.bak01 = bak01;
-        this.bak02 = bak02;
-        this.bak03 = bak03;
-        this.size = size;
-        this.color = color;
-    }
+
 
     public Info() {
     }

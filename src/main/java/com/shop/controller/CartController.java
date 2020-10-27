@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.Resource;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -21,6 +22,8 @@ public class CartController {
     /**
      * 服务对象
      */
+    @Resource
+    private CartsService cartsService;
     @Resource
     private CartService cartService;
 
@@ -51,24 +54,17 @@ public class CartController {
     }
 
     @GetMapping("/addCart/{uid}/{gid}/{iid}/{cid}/{sid}")
-    public Cart addCart(@PathVariable("uid") int uid,@PathVariable("gid")int gid,@PathVariable("iid")int iid,@PathVariable("cid")int cid,@PathVariable("sid")int sid){
+    public List<Carts> addCart(@PathVariable("uid") int uid,@PathVariable("gid")int gid,@PathVariable("iid")int iid,@PathVariable("cid")int cid,@PathVariable("sid")int sid){
         Cart cart = cartService.queryByUid(uid);
-        Size size = sizeService.queryById(sid);
-        Color color = colorService.queryById(cid);
-        Info info = infoService.queryById(iid);
         if(cart==null){
             Goods goods = goodsService.queryById(gid);
-            info.setSize(size);
-            info.setColor(color);
-            goods.setInfo(info);
             double nprice = goods.getNprice();
             Cart cart1=new Cart(uid, 1, nprice, null, null, null);
             Cart cart2 = cartService.insert(cart1);
             Integer id = cart2.getId();
             Cartitems cartitems = cartitemsService.insert(new Cartitems(id, gid, sid, cid, 1, null, null, null));
-            cartitems.setGoods(goods);
-            cart2.setCartitems(cartitems);
-            return cart2;
+            List<Carts> carts = cartsService.queryAllByUid(uid);
+            return carts;
         }else{
             Integer id = cart.getId();
             Goods goods = goodsService.queryById(gid);
@@ -82,28 +78,20 @@ public class CartController {
                     Cartitems update = cartitemsService.update(new Cartitems(ctid, id, gid, sid, cid, counts + 1, null, null, null));
                     Integer num = cart.getNum();
                     Object price = cart.getPrice();
-                    Object prices=(double)price+nprice;
+                    Object prices=(Double)price+nprice;
                     cartService.update(new Cart(id,uid,num+1,prices,null,null,null));
                     Cart cart1 = cartService.queryByUid(uid);
-                    info.setSize(size);
-                    info.setColor(color);
-                    goods.setInfo(info);
-                    cartitems1.setGoods(goods);
-                    cart1.setCartitems(cartitems1);
-                    return cart1;
+                    List<Carts> carts = cartsService.queryAllByUid(uid);
+                    return carts;
                 }
             }
-            info.setSize(size);
-            info.setColor(color);
-            goods.setInfo(info);
             Object price = cart.getPrice();
             Integer num = cart.getNum();
-            Object prices=(double)price+nprice;
             Cartitems cartitems = cartitemsService.insert(new Cartitems(id, gid, sid, cid, 1, null, null, null));
-            cartitems.setGoods(goods);
+            Object prices=(Double)price+nprice;
             Cart cart1 = cartService.update(new Cart(id, uid, num + 1, prices, null, null, null));
-            cart1.setCartitems(cartitems);
-            return cart1;
+            List<Carts> carts = cartsService.queryAllByUid(uid);
+            return carts;
         }
     }
     @GetMapping(value = "deleteAll/{uid}",produces = "text/html;charset=UTF-8")

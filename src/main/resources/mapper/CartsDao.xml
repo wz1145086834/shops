@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shop.dao.CartsDao">
+
+    <select id="queryAllByUid" resultType="carts">
+        select c.*,ct.*,g.*,i.*,s.*,cl.*,u.* from cart c,cartitems ct,goods g,info i,size s,color cl,user u
+        where u.uid=c.uid and c.id=ct.id and ct.gid =g.gid and i.gid=g.gid and i.iid=cl.iid and
+        i.iid=s.iid and u.uid=#{uid} and ct.sid=s.sid and ct.cid=cl.cid;
+    </select>
+</mapper>

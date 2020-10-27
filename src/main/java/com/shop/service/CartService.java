@@ -57,4 +57,6 @@ public interface CartService {
      */
     boolean deleteById(Integer id);
 
+    List<Cart> queryAllByUid(int uid);
+
 }

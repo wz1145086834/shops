@@ -156,4 +156,19 @@ public class Cartitems implements Serializable {
         this.bak03 = bak03;
     }
 
+    @Override
+    public String toString() {
+        return "Cartitems{" +
+                "ctid=" + ctid +
+                ", id=" + id +
+                ", gid=" + gid +
+                ", sid=" + sid +
+                ", cid=" + cid +
+                ", counts=" + counts +
+                ", bak01='" + bak01 + '\'' +
+                ", bak02='" + bak02 + '\'' +
+                ", bak03='" + bak03 + '\'' +
+                ", goods=" + goods +
+                '}';
+    }
 }

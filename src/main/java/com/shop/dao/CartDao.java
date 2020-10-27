@@ -29,6 +29,8 @@ public interface CartDao {
      */
     Cart queryByUid(int uid);
 
+    List<Cart> queryAllByUid(int uid);
+
     /**
      * 查询指定行数据
      *
