@@ -25,6 +25,18 @@ public class Color implements Serializable {
 
     private String bak03;
 
+    public Color() {
+    }
+
+    public Color(Integer cid, Integer iid, String color, String picture, String bak01, String bak02, String bak03) {
+        this.cid = cid;
+        this.iid = iid;
+        this.color = color;
+        this.picture = picture;
+        this.bak01 = bak01;
+        this.bak02 = bak02;
+        this.bak03 = bak03;
+    }
 
     public Integer getCid() {
         return cid;
@@ -82,4 +94,16 @@ public class Color implements Serializable {
         this.bak03 = bak03;
     }
 
+    @Override
+    public String toString() {
+        return "Color{" +
+                "cid=" + cid +
+                ", iid=" + iid +
+                ", color='" + color + '\'' +
+                ", picture='" + picture + '\'' +
+                ", bak01='" + bak01 + '\'' +
+                ", bak02='" + bak02 + '\'' +
+                ", bak03='" + bak03 + '\'' +
+                '}';
+    }
 }

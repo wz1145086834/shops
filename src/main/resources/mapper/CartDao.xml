@@ -20,6 +20,13 @@
         where id = #{id}
     </select>
 
+    <select id="queryByUid" resultMap="CartMap">
+        select
+        id, uid, num, price, bak01, bak02, bak03
+        from shopss.cart
+        where uid = #{uid}
+    </select>
+
     <!--查询指定行数据-->
     <select id="queryAllByLimit" resultMap="CartMap">
         select
@@ -96,17 +103,15 @@
             <if test="price != null">
                 price = #{price},
             </if>
-            <if test="bak01 != null and bak01 != ''">
                 bak01 = #{bak01},
-            </if>
-            <if test="bak02 != null and bak02 != ''">
                 bak02 = #{bak02},
-            </if>
-            <if test="bak03 != null and bak03 != ''">
                 bak03 = #{bak03},
-            </if>
         </set>
         where id = #{id}
+    </update>
+
+    <update id="updateByUid">
+        update cart set num =#{num},price =#{price} where uid= #{uid}
     </update>
 
     <!--通过主键删除-->

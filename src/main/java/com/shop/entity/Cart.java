@@ -25,6 +25,48 @@ public class Cart implements Serializable {
 
     private String bak03;
 
+    private Cartitems cartitems;
+
+    public Cart(Integer id, Integer uid, Integer num, Object price, String bak01, String bak02, String bak03, Cartitems cartitems) {
+        this.id = id;
+        this.uid = uid;
+        this.num = num;
+        this.price = price;
+        this.bak01 = bak01;
+        this.bak02 = bak02;
+        this.bak03 = bak03;
+        this.cartitems = cartitems;
+    }
+
+    public Cartitems getCartitems() {
+        return cartitems;
+    }
+
+    public void setCartitems(Cartitems cartitems) {
+        this.cartitems = cartitems;
+    }
+
+    public Cart() {
+    }
+
+    public Cart( Integer uid, Integer num, Object price, String bak01, String bak02, String bak03) {
+        this.uid = uid;
+        this.num = num;
+        this.price = price;
+        this.bak01 = bak01;
+        this.bak02 = bak02;
+        this.bak03 = bak03;
+    }
+
+    public Cart(Integer id, Integer uid, Integer num, Object price, String bak01, String bak02, String bak03) {
+        this.id = id;
+        this.uid = uid;
+        this.num = num;
+        this.price = price;
+        this.bak01 = bak01;
+        this.bak02 = bak02;
+        this.bak03 = bak03;
+    }
 
     public Integer getId() {
         return id;
@@ -82,4 +124,17 @@ public class Cart implements Serializable {
         this.bak03 = bak03;
     }
 
+    @Override
+    public String toString() {
+        return "Cart{" +
+                "id=" + id +
+                ", uid=" + uid +
+                ", num=" + num +
+                ", price=" + price +
+                ", bak01='" + bak01 + '\'' +
+                ", bak02='" + bak02 + '\'' +
+                ", bak03='" + bak03 + '\'' +
+                ", cartitems=" + cartitems +
+                '}';
+    }
 }

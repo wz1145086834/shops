@@ -9,7 +9,7 @@ import java.util.List;
  * (Cartitems)表数据库访问层
  *
  * @author makejava
- * @since 2020-10-24 15:06:52
+ * @since 2020-10-26 16:36:50
  */
 public interface CartitemsDao {
 
@@ -20,6 +20,10 @@ public interface CartitemsDao {
      * @return 实例对象
      */
     Cartitems queryById(Integer ctid);
+
+    List<Cartitems> queryByid(int id);
+
+    Cartitems queryByCartitems(Cartitems cartitems);
 
     /**
      * 查询指定行数据
@@ -71,6 +75,8 @@ public interface CartitemsDao {
      */
     int update(Cartitems cartitems);
 
+    int updateByIdAndGidAndCidAndSid(int counts,int id ,int gid,int cid ,int sid);
+
     /**
      * 通过主键删除数据
      *
@@ -78,5 +84,9 @@ public interface CartitemsDao {
      * @return 影响行数
      */
     int deleteById(Integer ctid);
+
+    int deleteByid(int id);
+
+    int deleteBySidAndCid(@Param("id") int id,@Param("gid") int gid,@Param("sid") int sid,@Param("cid") int cid);
 
 }

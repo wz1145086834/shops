@@ -20,6 +20,8 @@ public interface CartService {
      */
     Cart queryById(Integer id);
 
+    Cart queryByUid(int uid);
+
     /**
      * 查询多条数据
      *
@@ -44,6 +46,8 @@ public interface CartService {
      * @return 实例对象
      */
     Cart update(Cart cart);
+
+    int updateByUid(int num,double price,int uid);
 
     /**
      * 通过主键删除数据

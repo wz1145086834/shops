@@ -23,6 +23,29 @@ public class Size implements Serializable {
 
     private String bak03;
 
+    public Size() {
+    }
+
+    public Size(Integer sid, Integer iid, Integer size, String bak01, String bak02, String bak03) {
+        this.sid = sid;
+        this.iid = iid;
+        this.size = size;
+        this.bak01 = bak01;
+        this.bak02 = bak02;
+        this.bak03 = bak03;
+    }
+
+    @Override
+    public String toString() {
+        return "Size{" +
+                "sid=" + sid +
+                ", iid=" + iid +
+                ", size=" + size +
+                ", bak01='" + bak01 + '\'' +
+                ", bak02='" + bak02 + '\'' +
+                ", bak03='" + bak03 + '\'' +
+                '}';
+    }
 
     public Integer getSid() {
         return sid;

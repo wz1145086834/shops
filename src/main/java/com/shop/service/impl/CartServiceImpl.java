@@ -30,6 +30,11 @@ public class CartServiceImpl implements CartService {
         return this.cartDao.queryById(id);
     }
 
+    @Override
+    public Cart queryByUid(int uid) {
+        return cartDao.queryByUid(uid);
+    }
+
     /**
      * 查询多条数据
      *
@@ -64,6 +69,11 @@ public class CartServiceImpl implements CartService {
     public Cart update(Cart cart) {
         this.cartDao.update(cart);
         return this.queryById(cart.getId());
+    }
+
+    @Override
+    public int updateByUid(int num, double price, int uid) {
+        return cartDao.updateByUid(num,price,uid);
     }
 
     /**

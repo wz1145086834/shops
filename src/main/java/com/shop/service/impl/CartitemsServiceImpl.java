@@ -1,7 +1,7 @@
 package com.shop.service.impl;
 
-import com.shop.entity.Cartitems;
 import com.shop.dao.CartitemsDao;
+import com.shop.entity.Cartitems;
 import com.shop.service.CartitemsService;
 import org.springframework.stereotype.Service;
 
@@ -12,7 +12,7 @@ import java.util.List;
  * (Cartitems)表服务实现类
  *
  * @author makejava
- * @since 2020-10-24 15:06:53
+ * @since 2020-10-26 16:36:50
  */
 @Service("cartitemsService")
 public class CartitemsServiceImpl implements CartitemsService {
@@ -28,6 +28,16 @@ public class CartitemsServiceImpl implements CartitemsService {
     @Override
     public Cartitems queryById(Integer ctid) {
         return this.cartitemsDao.queryById(ctid);
+    }
+
+    @Override
+    public List<Cartitems> queryByid(int id) {
+        return cartitemsDao.queryByid(id);
+    }
+
+    @Override
+    public Cartitems queryByCartitems(Cartitems cartitems) {
+        return cartitemsDao.queryByCartitems(cartitems);
     }
 
     /**
@@ -66,6 +76,11 @@ public class CartitemsServiceImpl implements CartitemsService {
         return this.queryById(cartitems.getCtid());
     }
 
+    @Override
+    public int updateByIdAndGidAndCidAndSid(int counts,int id ,int gid,int cid ,int sid) {
+        return cartitemsDao.updateByIdAndGidAndCidAndSid(id,gid,cid,sid,counts );
+    }
+
     /**
      * 通过主键删除数据
      *
@@ -75,5 +90,15 @@ public class CartitemsServiceImpl implements CartitemsService {
     @Override
     public boolean deleteById(Integer ctid) {
         return this.cartitemsDao.deleteById(ctid) > 0;
+    }
+
+    @Override
+    public boolean deleteByid(int id) {
+        return cartitemsDao.deleteByid(id)>0;
+    }
+
+    @Override
+    public boolean deleteBySidAndCid(int id, int gid, int sid, int cid) {
+        return cartitemsDao.deleteBySidAndCid(id,gid,sid,cid)>0;
     }
 }

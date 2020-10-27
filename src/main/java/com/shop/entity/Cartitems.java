@@ -6,16 +6,20 @@ import java.io.Serializable;
  * (Cartitems)实体类
  *
  * @author makejava
- * @since 2020-10-24 15:06:51
+ * @since 2020-10-26 16:36:50
  */
 public class Cartitems implements Serializable {
-    private static final long serialVersionUID = -47522198919937769L;
+    private static final long serialVersionUID = 873971824035037651L;
 
     private Integer ctid;
 
     private Integer id;
 
     private Integer gid;
+
+    private Integer sid;
+
+    private Integer cid;
 
     private Integer counts;
 
@@ -25,6 +29,60 @@ public class Cartitems implements Serializable {
 
     private String bak03;
 
+    private Goods goods;
+
+    public Cartitems(Integer id, Integer gid, Integer sid, Integer cid) {
+        this.id = id;
+        this.gid = gid;
+        this.sid = sid;
+        this.cid = cid;
+    }
+
+    public Cartitems(Integer ctid, Integer id, Integer gid, Integer sid, Integer cid, Integer counts, String bak01, String bak02, String bak03) {
+        this.ctid = ctid;
+        this.id = id;
+        this.gid = gid;
+        this.sid = sid;
+        this.cid = cid;
+        this.counts = counts;
+        this.bak01 = bak01;
+        this.bak02 = bak02;
+        this.bak03 = bak03;
+    }
+
+    public Cartitems(Integer id, Integer gid, Integer sid, Integer cid, Integer counts, String bak01, String bak02, String bak03, Goods goods) {
+        this.id = id;
+        this.gid = gid;
+        this.sid = sid;
+        this.cid = cid;
+        this.counts = counts;
+        this.bak01 = bak01;
+        this.bak02 = bak02;
+        this.bak03 = bak03;
+        this.goods = goods;
+    }
+
+    public Goods getGoods() {
+        return goods;
+    }
+
+    public void setGoods(Goods goods) {
+        this.goods = goods;
+    }
+
+    public Cartitems() {
+    }
+
+    public Cartitems(Integer id, Integer gid, Integer sid, Integer cid, Integer counts, String bak01, String bak02, String bak03) {
+        this.id = id;
+        this.gid = gid;
+        this.sid = sid;
+        this.cid = cid;
+        this.counts = counts;
+        this.bak01 = bak01;
+        this.bak02 = bak02;
+        this.bak03 = bak03;
+    }
 
     public Integer getCtid() {
         return ctid;
@@ -48,6 +106,22 @@ public class Cartitems implements Serializable {
 
     public void setGid(Integer gid) {
         this.gid = gid;
+    }
+
+    public Integer getSid() {
+        return sid;
+    }
+
+    public void setSid(Integer sid) {
+        this.sid = sid;
+    }
+
+    public Integer getCid() {
+        return cid;
+    }
+
+    public void setCid(Integer cid) {
+        this.cid = cid;
     }
 
     public Integer getCounts() {

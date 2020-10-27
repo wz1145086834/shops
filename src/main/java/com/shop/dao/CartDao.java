@@ -22,6 +22,14 @@ public interface CartDao {
     Cart queryById(Integer id);
 
     /**
+     * 通过UiD查询单条数据
+     *
+     * @param uid
+     * @return 实例对象
+     */
+    Cart queryByUid(int uid);
+
+    /**
      * 查询指定行数据
      *
      * @param offset 查询起始位置
@@ -70,6 +78,8 @@ public interface CartDao {
      * @return 影响行数
      */
     int update(Cart cart);
+
+    int updateByUid(int num,double price,int uid);
 
     /**
      * 通过主键删除数据

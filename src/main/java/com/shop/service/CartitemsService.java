@@ -8,7 +8,7 @@ import java.util.List;
  * (Cartitems)表服务接口
  *
  * @author makejava
- * @since 2020-10-24 15:06:52
+ * @since 2020-10-26 16:36:50
  */
 public interface CartitemsService {
 
@@ -19,6 +19,10 @@ public interface CartitemsService {
      * @return 实例对象
      */
     Cartitems queryById(Integer ctid);
+
+    List<Cartitems> queryByid(int id);
+
+    Cartitems queryByCartitems(Cartitems cartitems);
 
     /**
      * 查询多条数据
@@ -45,6 +49,8 @@ public interface CartitemsService {
      */
     Cartitems update(Cartitems cartitems);
 
+    int updateByIdAndGidAndCidAndSid(int counts,int id ,int gid,int cid ,int sid);
+
     /**
      * 通过主键删除数据
      *
@@ -52,5 +58,9 @@ public interface CartitemsService {
      * @return 是否成功
      */
     boolean deleteById(Integer ctid);
+
+    boolean deleteByid(int id);
+
+    boolean deleteBySidAndCid(int id,int gid,int sid,int cid);
 
 }

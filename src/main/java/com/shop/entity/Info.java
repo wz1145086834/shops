@@ -25,6 +25,40 @@ public class Info implements Serializable {
 
     private String bak03;
 
+    private Size size;
+
+    private Color color;
+
+    public Size getSize() {
+        return size;
+    }
+
+    public Info(Integer iid, Integer gid, String texture, String model, String bak01, String bak02, String bak03, Size size, Color color) {
+        this.iid = iid;
+        this.gid = gid;
+        this.texture = texture;
+        this.model = model;
+        this.bak01 = bak01;
+        this.bak02 = bak02;
+        this.bak03 = bak03;
+        this.size = size;
+        this.color = color;
+    }
+
+    public Info() {
+    }
+
+    public void setSize(Size size) {
+        this.size = size;
+    }
+
+    public Color getColor() {
+        return color;
+    }
+
+    public void setColor(Color color) {
+        this.color = color;
+    }
 
     public Integer getIid() {
         return iid;
@@ -82,4 +116,18 @@ public class Info implements Serializable {
         this.bak03 = bak03;
     }
 
+    @Override
+    public String toString() {
+        return "Info{" +
+                "iid=" + iid +
+                ", gid=" + gid +
+                ", texture='" + texture + '\'' +
+                ", model='" + model + '\'' +
+                ", bak01='" + bak01 + '\'' +
+                ", bak02='" + bak02 + '\'' +
+                ", bak03='" + bak03 + '\'' +
+                ", size=" + size +
+                ", color=" + color +
+                '}';
+    }
 }
