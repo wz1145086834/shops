@@ -31,5 +31,19 @@ public class AttentionController {
     public Attention selectOne(Integer id) {
         return this.attentionService.queryById(id);
     }
-
+    /*
+     * 添加关注
+     * */
+    @PostMapping("insert")
+    public boolean insert(Attention a){
+        attentionService.insert(a);
+        return true;
+    }
+    /*
+     * 取关
+     * */
+    @GetMapping("delect/{aid}")
+    public boolean delect(@PathVariable("aid") Integer aid){
+        return attentionService.deleteById(aid);
+    }
 }

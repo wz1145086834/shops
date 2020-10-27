@@ -18,7 +18,7 @@ public interface UserService {
      * @param uid 主键
      * @return 实例对象
      */
-    User queryById(Integer uid);
+    User queryByTel(String tel);
 
     /**
      * 查询多条数据
@@ -52,5 +52,6 @@ public interface UserService {
      * @return 是否成功
      */
     boolean deleteById(Integer uid);
-
+    /*查询所有*/
+    List<User> getAllUser();
 }

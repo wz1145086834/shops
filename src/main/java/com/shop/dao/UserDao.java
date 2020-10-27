@@ -19,7 +19,7 @@ public interface UserDao {
      * @param uid 主键
      * @return 实例对象
      */
-    User queryById(Integer uid);
+    User queryByTel(String tel);
 
     /**
      * 查询指定行数据
@@ -78,5 +78,5 @@ public interface UserDao {
      * @return 影响行数
      */
     int deleteById(Integer uid);
-
+    List<User> getAllUser();
 }

@@ -33,7 +33,7 @@ public class BrandController {
         return this.brandService.queryById(id);
     }
 
-    @GetMapping("selectAll/{tid}")
+    @GetMapping("selectAll")
     public List<Brand> selectAll(Brand brand){
         return this.brandService.queryAll(brand);
     }

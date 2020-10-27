@@ -15,7 +15,7 @@ public class Attention implements Serializable {
 
     private Integer gid;
 
-    private Integer number;
+    private Integer uid;
 
     private String bak01;
 
@@ -40,12 +40,12 @@ public class Attention implements Serializable {
         this.gid = gid;
     }
 
-    public Integer getNumber() {
-        return number;
+    public Integer getUid() {
+        return uid;
     }
 
-    public void setNumber(Integer number) {
-        this.number = number;
+    public void setUid(Integer uid) {
+        this.uid = uid;
     }
 
     public String getBak01() {

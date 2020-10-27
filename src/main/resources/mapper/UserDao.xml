@@ -15,11 +15,11 @@
     </resultMap>
 
     <!--查询单个-->
-    <select id="queryById" resultMap="UserMap">
+    <select id="queryByTel" resultMap="UserMap">
         select
         uid, tel, sex, birth, addr, pass, bak01, bak02, bak03
         from shopss.user
-        where uid = #{uid}
+        where tel=#{tel}
     </select>
 
     <!--查询指定行数据-->
@@ -129,5 +129,9 @@
     <delete id="deleteById">
         delete from shopss.user where uid = #{uid}
     </delete>
+
+    <select id="getAllUser" resultType="com.shop.entity.User">
+        select * from shopss.user
+    </select>
 
 </mapper>

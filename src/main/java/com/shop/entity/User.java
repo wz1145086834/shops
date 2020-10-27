@@ -29,6 +29,20 @@ public class User implements Serializable {
 
     private String bak03;
 
+    @Override
+    public String toString() {
+        return "User{" +
+                "uid=" + uid +
+                ", tel='" + tel + '\'' +
+                ", sex='" + sex + '\'' +
+                ", birth=" + birth +
+                ", addr='" + addr + '\'' +
+                ", pass='" + pass + '\'' +
+                ", bak01='" + bak01 + '\'' +
+                ", bak02='" + bak02 + '\'' +
+                ", bak03='" + bak03 + '\'' +
+                '}';
+    }
 
     public Integer getUid() {
         return uid;

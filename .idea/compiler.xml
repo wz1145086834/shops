@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="shops" />
+        <module name="MySSM" />
         <module name="Shops" />
       </profile>
     </annotationProcessing>

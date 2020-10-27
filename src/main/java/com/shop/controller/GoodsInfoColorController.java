@@ -18,18 +18,18 @@ public class GoodsInfoColorController {
     @Resource
     private GoodsInfoColorService goodsInfoColorService;
 
-    @GetMapping("selectAll/{bid}")
-    public List<GoodsInfoColor> selectAll(@PathVariable("bid") Integer bid){
+    @GetMapping("selectAll")
+    public List<GoodsInfoColor> selectAll(Integer bid){
         return this.goodsInfoColorService.getAllGoods(bid);
     }
 
-    @GetMapping("ascGoods/{bid}")
-    public List<GoodsInfoColor> ascGoods(@PathVariable("bid") Integer bid){
+    @GetMapping("ascGoods")
+    public List<GoodsInfoColor> ascGoods(Integer bid){
         return this.goodsInfoColorService.ascGoods(bid);
     }
 
-    @GetMapping("descGoods/{bid}")
-    public List<GoodsInfoColor> descGoods(@PathVariable("bid") Integer bid){
+    @GetMapping("descGoods")
+    public List<GoodsInfoColor> descGoods(Integer bid){
         return this.goodsInfoColorService.descGoods(bid);
     }
 }

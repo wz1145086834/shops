@@ -22,12 +22,12 @@ public class UserServiceImpl implements UserService {
     /**
      * 通过ID查询单条数据
      *
-     * @param uid 主键
+     * @param tel 主键
      * @return 实例对象
      */
-    @Override
-    public User queryById(Integer uid) {
-        return this.userDao.queryById(uid);
+
+    public User queryByTel(String tel) {
+        return this.userDao.queryByTel(tel);
     }
 
     /**
@@ -37,7 +37,7 @@ public class UserServiceImpl implements UserService {
      * @param limit  查询条数
      * @return 对象列表
      */
-    @Override
+
     public List<User> queryAllByLimit(int offset, int limit) {
         return this.userDao.queryAllByLimit(offset, limit);
     }
@@ -48,7 +48,7 @@ public class UserServiceImpl implements UserService {
      * @param user 实例对象
      * @return 实例对象
      */
-    @Override
+
     public User insert(User user) {
         this.userDao.insert(user);
         return user;
@@ -60,10 +60,10 @@ public class UserServiceImpl implements UserService {
      * @param user 实例对象
      * @return 实例对象
      */
-    @Override
+
     public User update(User user) {
         this.userDao.update(user);
-        return this.queryById(user.getUid());
+        return this.queryByTel(user.getTel());
     }
 
     /**
@@ -72,8 +72,12 @@ public class UserServiceImpl implements UserService {
      * @param uid 主键
      * @return 是否成功
      */
-    @Override
+
     public boolean deleteById(Integer uid) {
+
         return this.userDao.deleteById(uid) > 0;
+    }
+    public List<User> getAllUser() {
+        return this.userDao.getAllUser();
     }
 }

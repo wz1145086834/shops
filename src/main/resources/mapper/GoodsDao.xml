@@ -13,12 +13,20 @@
         <result property="bak03" column="bak03" jdbcType="VARCHAR"/>
     </resultMap>
 
+
     <!--查询单个-->
     <select id="queryById" resultMap="GoodsMap">
         select
         gid, bid, gname, oprice, nprice, bak01, bak02, bak03
         from shopss.goods
         where gid = #{gid}
+    </select>
+    <!--查询单个-->
+    <select id="AllQuery" resultMap="GoodsMap">
+        select
+        gid, bid, gname, oprice, nprice, bak01, bak02, bak03
+        from shopss.goods
+
     </select>
 
     <!--查询指定行数据-->
@@ -122,5 +130,7 @@
     <delete id="deleteById">
         delete from shopss.goods where gid = #{gid}
     </delete>
+
+
 
 </mapper>
