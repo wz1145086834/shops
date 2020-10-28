@@ -133,4 +133,13 @@ public class CartController {
             return mgs;
         }
     }
+    @GetMapping("/selCart/{uid}")
+    public List<Carts> selCart(@PathVariable("uid") int uid, Model m) {
+        List<Carts> carts = cartsService.queryAllByUid(uid);
+        if(carts.size()==0){
+            return null;
+        }else{
+            return  carts;
+        }
+    }
 }
